@@ -21,6 +21,7 @@ div.container-num1{
     max-width: fit-content;
     border-radius: 1rem;
     box-shadow: 2px 5px 4px 1px black;
+    opacity: 0.9;
 }
 div.container-num2{
         /* padding-left: 1rem;
@@ -30,8 +31,8 @@ div.container-num2{
         max-width: fit-content;
         border-end-start-radius: 1rem;
         border-end-end-radius: 1rem;
-    box-shadow: 2px 5px 4px 1px black;
-
+        box-shadow: 2px 5px 4px 1px black;
+        opacity: 0.9;
 }
 div.header{
     /* padding: 1rem; */
