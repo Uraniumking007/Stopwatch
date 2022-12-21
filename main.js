@@ -7,10 +7,11 @@
 // }
 // document.getElementById("outputSecond").value = 00
 function second() {
-  let jod = (document.getElementById("outputSecond"));
-  let scout = parseInt(jod);
-  setInterval(function () {scout += 1 }, 1000);
-
-  document.getElementById("outputSecond").value = scout;
+  let jod = document.getElementById('outputSecond');
+  let scout = parseInt(jod.textContent);
+  setInterval(function () {
+    scout++;
+    document.getElementById('outputSecond').innerText = scout;
+  }, 100);
 }
-document.getElementById("inputStart").addEventListener("click",second)
+document.getElementById('inputStart').addEventListener('click', second);
