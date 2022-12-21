@@ -7,15 +7,21 @@
 </head>
 <link rel="stylesheet" href="main.css">
 <body>
-    <section class="header">
+    <div class="header">
+        <div class="container-num1">
         Stopwatch
-    </section>
-    <div>
-        <span id="outputHour">00</span>:<span id="outputMinute">00</span>:<span id="outputSecond">00</span>
+        </div>
     </div>
-    <Button id="inputStart">Start</Button>
-    <Button id="inputStop" >Stop</Button>
-    <button id="inputReset" >Reset</button>
+    <div class="container-numbers">
+        <div class="container-num2">
+            <span id="outputHour">00</span>:<span id="outputMinute">00</span>:<span id="outputSecond">00</span>
+        </div>
+    </div>
+    <div class="container-button">
+        <Button id="inputStart">Start</Button>
+        <Button id="inputStop" >Stop</Button>
+        <button id="inputReset" >Reset</button>
+    </div>
 </body>
 <script src="main.js"></script>
 </html>
