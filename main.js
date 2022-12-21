@@ -9,26 +9,27 @@
 // let minute = document.getElementById("outputMinute");
 // let nMinute = parseInt(minute.textContent);
 // var minute = 00;
+var stopInterval
 
 function second() {
   let ominute = document.getElementById('outputMinute');
   let nMinute = parseInt(ominute.textContent);
-  let jod = document.getElementById('outputSecond');
-  let scout = parseInt(jod.textContent);
+  let osecond = document.getElementById('outputSecond');
+  let nSecond = parseInt(osecond.textContent);
   let hour = document.getElementById("outputHour");
   let nHour = parseInt(hour.textContent);
-  setInterval(function () {
-    scout++;
-    if (scout <= 9) {
-      document.getElementById('outputSecond').innerText = '0' + scout;
+  stopInterval = setInterval(function () {
+    nSecond++;
+    if (nSecond <= 9) {
+      document.getElementById('outputSecond').innerText = '0' + nSecond;
     }
-    if (scout > 9) {
-      document.getElementById('outputSecond').innerText = scout;
+    if (nSecond > 9) {
+      document.getElementById('outputSecond').innerText = nSecond;
     }
-    if (scout > 99) {
+    if (nSecond > 99) {
       // console.log('minute');
-      scout = 0;
-      jod.innerHTML = '0' + 0;
+      nSecond = 0;
+      osecond.innerHTML = '0' + 0;
       nMinute++;
       if (nMinute <=9) {
         ominute.innerText = '0' + nMinute;
@@ -43,8 +44,19 @@ function second() {
         hour.innerText = '0' + nHour;
       }
 
-      document.getElementById('outputSecond').innerText = '0' + scout;
+      document.getElementById('outputSecond').innerText = '0' + nSecond;
     }
   }, 1000);
 }
+function reset() {
+  document.getElementById('outputMinute').innerText = "00";
+  document.getElementById('outputSecond').innerText = "00";
+  document.getElementById('outputHour').innerText = "00";
+  clearInterval(stopInterval);
+}
+function stopit() {
+  clearInterval(stopInterval);
+}
 document.getElementById('inputStart').addEventListener('click', second);
+document.getElementById('inputReset').addEventListener('click', reset);
+document.getElementById('inputStop').addEventListener('click', stopit);
