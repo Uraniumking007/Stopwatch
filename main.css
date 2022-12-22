@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 body{
     background-image: url(/assets/background.jpg);
-    background-size: cover;
+    background-size:cover;
+    /* background-repeat: no-repeat; */
+    background-blend-mode: color;
 }
 div.container-numbers{
     color: black;
@@ -48,7 +50,9 @@ div.container-button{
     display: flex;
     justify-content: center;
     column-gap: 0.4rem;
-
+}
+Button:active{
+    transform:translateY(4px)
 }
 Button{
     color: black;
@@ -59,4 +63,21 @@ Button{
     border-radius: 0.5rem;
     border: none;
     box-shadow: 2px 5px 4px 1px black;
+}
+div.main-container{
+     max-width: 50%;
+     display: inline;
+     justify-content: center;
+}
+button#inputStart{
+    background-color: #00ff00;
+}
+button#inputStop{
+    background-color: red;
+}
+button#inputReset{
+    background-color: yellow;
+}
+button#lap{
+    background-color: orange;
 }
