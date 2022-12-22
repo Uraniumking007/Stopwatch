@@ -1,14 +1,3 @@
-// function second()   {
-//     let j = 0;
-//     for (let i = 0; i < 60; i++) {
-//       document.getElementById(second).value = j;
-//       j = j + 1;
-//     }
-// }
-// document.getElementById("outputSecond").value = 00
-// let minute = document.getElementById("outputMinute");
-// let nMinute = parseInt(minute.textContent);
-// var minute = 00;
 var stopInterval
 
 function second() {
@@ -26,7 +15,7 @@ function second() {
     if (nSecond > 9) {
       document.getElementById('outputSecond').innerText = nSecond;
     }
-    if (nSecond > 99) {
+    if (nSecond > 59) {
       // console.log('minute');
       nSecond = 0;
       osecond.innerHTML = '0' + 0;
@@ -37,7 +26,7 @@ function second() {
       if (nMinute > 9 ) {
         ominute.innerText = nMinute;
       }
-      if (nMinute > 60) {
+      if (nMinute > 59) {
         nMinute = 0;
         ominute.innerText = '0' + 0;
         nHour++;
