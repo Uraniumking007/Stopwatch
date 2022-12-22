@@ -1,12 +1,17 @@
 var stopInterval
+let ominute = document.getElementById('outputMinute');
+let nMinute = parseInt(ominute.textContent);
+let osecond = document.getElementById('outputSecond');
+let nSecond = parseInt(osecond.textContent);
+let hour = document.getElementById("outputHour");
+let nHour = parseInt(hour.textContent);
+let counter = 0;
+let calcnum = 1;
+const sec = [];
+const min = [];
+const hr = [];
 
 function second() {
-  let ominute = document.getElementById('outputMinute');
-  let nMinute = parseInt(ominute.textContent);
-  let osecond = document.getElementById('outputSecond');
-  let nSecond = parseInt(osecond.textContent);
-  let hour = document.getElementById("outputHour");
-  let nHour = parseInt(hour.textContent);
   stopInterval = setInterval(function () {
     nSecond++;
     if (nSecond <= 9) {
@@ -46,6 +51,18 @@ function reset() {
 function stopit() {
   clearInterval(stopInterval);
 }
+
+function lap() {
+  sec.push(nSecond)
+  min.push(nMinute)
+  hr.push(nHour)
+  const code = `<div class="lap-record"> ${calcnum}: ${hr[counter]}:${min[counter]}:${sec[counter]} </div>`;
+  const div = document.querySelector(".lap-begins");
+  div.insertAdjacentHTML("afterbegin", `${code}`);
+  counter++;
+  calcnum++;
+}
 document.getElementById('inputStart').addEventListener('click', second);
 document.getElementById('inputReset').addEventListener('click', reset);
 document.getElementById('inputStop').addEventListener('click', stopit);
+document.getElementById('inputLap').addEventListener('click', lap);

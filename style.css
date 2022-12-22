@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito&display=swap');
 body{
     background-image: url(/assets/background.jpg);
     background-size:cover;
@@ -46,10 +46,18 @@ div.header{
     justify-content: center;
     margin-top: 15% ;
 }
-div.container-button{
+div.input-buttons{
     display: flex;
     justify-content: center;
-    column-gap: 0.4rem;
+    column-gap: 0.7rem;
+}
+/* div.container-button{
+    display: grid;
+} */
+div.lap-container{
+    display: flex;
+    justify-content: center;
+    column-gap: 0.7rem;
 }
 Button:active{
     transform:translateY(4px)
@@ -63,6 +71,7 @@ Button{
     border-radius: 0.5rem;
     border: none;
     box-shadow: 2px 5px 4px 1px black;
+    opacity: 0.7;
 }
 div.main-container{
      max-width: 50%;
@@ -80,4 +89,27 @@ button#inputReset{
 }
 button#lap{
     background-color: orange;
+}
+div.lap-begins{
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 1rem;
+    font-size: larger;
+    max-width: fit-content;
+}
+div.lap-container{
+    /* display: flex; */
+    justify-content: center;
+}
+div.lap-record{
+    
+    background-color: aliceblue;
+    padding: 0.2rem;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    opacity: 0.7;
+    /* border-radius: 1rem; */
 }
