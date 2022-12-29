@@ -1,9 +1,9 @@
-var stopInterval
+var stopInterval;
 let ominute = document.getElementById('outputMinute');
 let nMinute = parseInt(ominute.textContent);
 let osecond = document.getElementById('outputSecond');
 let nSecond = parseInt(osecond.textContent);
-let hour = document.getElementById("outputHour");
+let hour = document.getElementById('outputHour');
 let nHour = parseInt(hour.textContent);
 let counter = 0;
 let calcnum = 1;
@@ -15,37 +15,44 @@ function second() {
   stopInterval = setInterval(function () {
     nSecond++;
     if (nSecond <= 9) {
-      document.getElementById('outputSecond').innerText = '0' + nSecond;
+      osecond.innerText = '0' + nSecond;
     }
     if (nSecond > 9) {
-      document.getElementById('outputSecond').innerText = nSecond;
+      osecond.innerText = nSecond;
     }
     if (nSecond > 59) {
       // console.log('minute');
       nSecond = 0;
       osecond.innerHTML = '0' + 0;
       nMinute++;
-      if (nMinute <=9) {
-        ominute.innerText = '0' + nMinute;
-      }
-      if (nMinute > 9 ) {
-        ominute.innerText = nMinute;
-      }
-      if (nMinute > 59) {
-        nMinute = 0;
-        ominute.innerText = '0' + 0;
-        nHour++;
-        hour.innerText = '0' + nHour;
-      }
+      chageMin();
 
-      document.getElementById('outputSecond').innerText = '0' + nSecond;
+      osecond.innerText = '0' + nSecond;
     }
-  }, 1000);
+  }, 10);
+}
+
+function chageMin() {
+  if (nMinute <= 9) {
+    ominute.innerText = '0' + nMinute;
+  }
+  if (nMinute > 9) {
+    ominute.innerText = nMinute;
+  }
+  if (nMinute > 59) {
+    nMinute = 0;
+    ominute.innerText = '0' + 0;
+    nHour++;
+    hour.innerText = '0' + nHour;
+  }
 }
 function reset() {
-  document.getElementById('outputMinute').innerText = "00";
-  document.getElementById('outputSecond').innerText = "00";
-  document.getElementById('outputHour').innerText = "00";
+  nSecond = 0;
+  nMinute = 0;
+  nHour = 0;
+  ominute.innerText = '00';
+  osecond.innerText = '00';
+  hour.innerText = '00';
   clearInterval(stopInterval);
 }
 function stopit() {
@@ -53,12 +60,24 @@ function stopit() {
 }
 
 function lap() {
-  sec.push(nSecond)
-  min.push(nMinute)
-  hr.push(nHour)
+  if (nSecond < 9) {
+    sec.push('0' + nSecond);
+  } else {
+    sec.push(nSecond);
+  }
+  if (nMinute < 9) {
+    min.push('0' + nMinute);
+  } else {
+    min.push(nMinute);
+  }
+  if (nHour < 9) {
+    hr.push('0' + nHour);
+  } else {
+    hr.push(nHour);
+  }
   const code = `<div class="lap-record"> ${calcnum}: ${hr[counter]}:${min[counter]}:${sec[counter]} </div>`;
-  const div = document.querySelector(".lap-begins");
-  div.insertAdjacentHTML("afterbegin", `${code}`);
+  const div = document.querySelector('.lap-begins');
+  div.insertAdjacentHTML('afterbegin', `${code}`);
   counter++;
   calcnum++;
 }

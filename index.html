@@ -1,42 +1,36 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stopwatch</title>
-</head>
-<link rel="stylesheet" href="style.css">
-<body>
+  </head>
+  <link rel="stylesheet" href="style.css" />
+  <body>
     <div class="main-container">
-    <div class="header">
-        <div class="container-num1">
-        Stopwatch
-        </div>
-    </div>
-    <div class="container-numbers">
+      <div class="header">
+        <div class="container-num1">Stopwatch</div>
+      </div>
+      <div class="container-numbers">
         <div class="container-num2">
-            <span id="outputHour">00</span>:<span id="outputMinute">00</span>:<span id="outputSecond">00</span>
+          <span id="outputHour">00</span>:<span id="outputMinute">00</span
+          >:<span id="outputSecond">00</span>
         </div>
-    </div>
-    <div class="container-button">
+      </div>
+      <div class="container-button">
         <div class="input-buttons">
-            <Button id="inputStart">Start</Button>
-            <Button id="inputStop" >Stop</Button>
+          <button id="inputStart">Start</button>
+          <button id="inputStop">Stop</button>
         </div>
         <div class="lap-container">
-            <button id="inputReset" >Reset</button>
-            <button id="inputLap">Lap</button>
+          <button id="inputReset">Reset</button>
+          <button id="inputLap">Lap</button>
         </div>
+      </div>
+      <div class="lap-container">
+        <div class="lap-begins"></div>
+      </div>
     </div>
-    <div class="lap-container">
-
-        <div class="lap-begins">
-            
-        </div>
-    </div>
-
-    
-</div>
-</body>
-<script src="script.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
