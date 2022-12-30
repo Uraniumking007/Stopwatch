@@ -85,7 +85,3 @@ document.getElementById('inputStart').addEventListener('click', second);
 document.getElementById('inputReset').addEventListener('click', reset);
 document.getElementById('inputStop').addEventListener('click', stopit);
 document.getElementById('inputLap').addEventListener('click', lap);
-
-for (let index = 0; index < array.length; index++) {
-  const element = array[index];
-}
