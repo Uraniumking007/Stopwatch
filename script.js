@@ -29,7 +29,7 @@ function second() {
 
       osecond.innerText = '0' + nSecond;
     }
-  }, 10);
+  }, 1000);
 }
 
 function chageMin() {
