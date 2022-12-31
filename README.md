@@ -1,6 +1,6 @@
 # Stopwatch App
 
-This is a simple stopwatch app built with JavaScript.
+This is a simple stopwatch app built with JavaScript. Read about how to build it [here](https://blog.bhaveshp.dev/stopwatch-using-javascript)
 
 ## Features
 
