@@ -1,4 +1,8 @@
 var stopInterval;
+
+//timer controller. if  'start' is already clicked it does not allow other clicks
+//otherwise it misfunctions
+var isRunning = 0;
 let ominute = document.getElementById('outputMinute');
 let nMinute = parseInt(ominute.textContent);
 let osecond = document.getElementById('outputSecond');
@@ -12,6 +16,8 @@ const min = [];
 const hr = [];
 
 function second() {
+  isRunning+=1;
+  if(isRunning==1){
   stopInterval = setInterval(function () {
     nSecond++;
     if (nSecond <= 9) {
@@ -31,6 +37,7 @@ function second() {
     }
   }, 1000);
 }
+}
 
 function chageMin() {
   if (nMinute <= 9) {
@@ -47,6 +54,7 @@ function chageMin() {
   }
 }
 function reset() {
+  isRunning=0;
   nSecond = 0;
   nMinute = 0;
   nHour = 0;
@@ -56,6 +64,7 @@ function reset() {
   clearInterval(stopInterval);
 }
 function stopit() {
+  isRunning=0;
   clearInterval(stopInterval);
 }
 
@@ -81,7 +90,7 @@ function lap() {
   counter++;
   calcnum++;
 }
-document.getElementById('inputStart').addEventListener('click', second);
+document.getElementById('inputStart').addEventListener('click',second);
 document.getElementById('inputReset').addEventListener('click', reset);
 document.getElementById('inputStop').addEventListener('click', stopit);
 document.getElementById('inputLap').addEventListener('click', lap);
