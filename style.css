@@ -4,6 +4,7 @@ body{
     background-size:cover;
     background-blend-mode: color;
     font-family: 'Nunito', sans-serif;
+    background-attachment: fixed;
 }
 div.main-container{
      max-width: 50%;
